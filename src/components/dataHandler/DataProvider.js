@@ -10,7 +10,7 @@ function DataProvider() {
     console.log("DataProvider Called")
     const[dbData, setDbData] = useState(null)
     //const [loading, setLoading] = useState(true)
-    const url = "https://triptoafsin.github.io/API-Host/myProjects.json"
+    const url = "https://notebot-engine-v1.herokuapp.com/"
 
      //pulling data 
 

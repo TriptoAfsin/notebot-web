@@ -4,6 +4,7 @@ import useWindowDimensions from '../dataHandler/ResizeHandler'
 
 import  {Link} from 'react-router-dom'
 import Footer from '../layout/Footer';
+import NoteBotStatus from '../layout/NoteBotStatus';
 
 function FrontPage() {
 
@@ -24,7 +25,11 @@ function FrontPage() {
                 <Link to="/results" className="button txt-xxl purpleGradient shadow bold">Results</Link>
                 <Link to="/syllabus" className="button txt-xxl purpleGradient shadow bold">Syllabus</Link>
             </div>
-
+            <div className="center-self">
+                <div className="column">
+                    <NoteBotStatus></NoteBotStatus>
+                </div>
+            </div>
             <Footer></Footer>
         </React.Fragment>
     )
