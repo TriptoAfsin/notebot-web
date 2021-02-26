@@ -15,7 +15,7 @@ function FrontPage() {
         <React.Fragment>
             <div className="center-self mt2">
             <div className="fade">
-                    {width >= 820 ? <img src="./imgs/Notebot_web.png" alt="notebot_web_logo"  className="center-self"/> : <p></p>}
+                    {width >= 820 ? <img src="./imgs/Notebot_web.png" alt="notebot_web_logo"  className="center-self wobble"/> : <p></p>}
                 </div>
             </div>
             <div className="center-self pad4 floatIn">
@@ -27,10 +27,14 @@ function FrontPage() {
             </div>
             <div className="center-self">
                 <div className="column">
-                    <NoteBotStatus></NoteBotStatus>
+                    <NoteBotStatus title="NoteBOT Status"></NoteBotStatus>
                 </div>
             </div>
-            <Footer></Footer>
+            <div className="center-self floatUp">
+            <a href="https://www.messenger.com/t/103148557940299" className="button txt-xxl blueGradient shadow bold">BOT Link</a>
+            </div>
+            
+            <Footer version="0.2b" className="floatUp"></Footer>
         </React.Fragment>
     )
 }

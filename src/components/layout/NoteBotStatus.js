@@ -4,13 +4,16 @@ import DataProvider from '../dataHandler/DataProvider'
 import Loader from '../UiElements/Loader'
 import StatusInfo from './StatusInfo'
 
-function NoteBotStatus() {
+
+
+
+function NoteBotStatus(props) {
 
     const [loading, setLoading] = useState(true)
     const[match, setMatch] = useState('')
 
 
-    const repoData = DataProvider()
+    const repoData = DataProvider("https://notebot-engine-v1.herokuapp.com/")
     console.log(repoData)
 
     useEffect(
@@ -22,10 +25,17 @@ function NoteBotStatus() {
         }, [repoData]
     )
 
+    let statusFunc = () => {
+        return (
+        <StatusInfo botStatus={repoData.botStatus} serverStatus={repoData.isServerRunning} msg={repoData.msg}></StatusInfo>
+        )
+    }
+
+
     return (
         <React.Fragment>
-            <h1>NoteBOT Status</h1>
-            {loading ? <Loader></Loader> : <StatusInfo botStatus={repoData.botStatus} serverStatus={repoData.isServerRunning} msg={repoData.msg}></StatusInfo>}
+            <h1>{props.title}</h1>
+            {loading ? <Loader></Loader> : statusFunc()}
         </React.Fragment>
     )
 }
